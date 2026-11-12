@@ -3,7 +3,6 @@
     "blocklist": [],
     "plugins_order": [
       "equalizer#0",
-      "stereo_tools#0",
       "crystalizer#0"
     ],
     "equalizer#0": {
@@ -725,29 +724,6 @@
         }
       },
       "split-channels": false
-    },
-    "stereo_tools#0": {
-      "balance-in": 0.0,
-      "balance-out": 0.0,
-      "bypass": false,
-      "delay": 0.0,
-      "dry": 0.0,
-      "input-gain": 0.0,
-      "middle-level": 1.0,
-      "middle-panorama": 0.0,
-      "mode": "LR > LR (Stereo Default)",
-      "mutel": false,
-      "muter": false,
-      "output-gain": 0.0,
-      "phasel": false,
-      "phaser": false,
-      "sc-level": 1.0,
-      "side-balance": 0.0,
-      "side-level": 1.25,
-      "softclip": false,
-      "stereo-base": 0.25,
-      "stereo-phase": 0.0,
-      "wet": 1.0
     },
     "crystalizer#0": {
       "adaptive-intensity": true,
