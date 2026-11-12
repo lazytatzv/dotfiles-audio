@@ -1,0 +1,43 @@
+# PipeWire 7.1 Virtual Spatial Surround Sink
+#
+# この設定を有効にすると、OSおよびゲーム・映画プレイヤーに
+# 「7.1chサラウンド対応スピーカー」として認識される仮想オーディオデバイスが作成され、
+# HRIR畳み込みによってリアルタイムに高品位バイノーラル（ヘッドホン用立体音響）に変換されます。
+#
+# 有効化方法:
+#   mkdir -p ~/.config/pipewire/pipewire.conf.d/
+#   cp this-file ~/.config/pipewire/pipewire.conf.d/99-spatial-7.1-sink.conf
+#   systemctl --user restart pipewire
+#
+# 注意: spatial-hrir.wav には、お好みのHeSuVi 7.1ch WAVファイル（atmos.wav や gsx.wav など）への
+# フルパスを指定してください。
+
+context.modules = [
+    { name = libpipewire-module-filter-chain
+        args = {
+            node.description = "7.1 Spatial Surround Sink (Headphones)"
+            media.name       = "7.1 Spatial Surround Sink"
+            filter.graph = {
+                nodes = [
+                    # Built-in spatializer or convolving filter
+                    {
+                        type   = builtin
+                        name   = spatializer
+                        label  = spatializer
+                    }
+                ]
+            }
+            audio.position = [ FL FR FC LFE SL SR RL RR ]
+            capture.props = {
+                node.name      = "spatial_surround_sink"
+                media.class    = "Audio/Sink"
+                audio.channels = 8
+                audio.position = [ FL FR FC LFE SL SR RL RR ]
+            }
+            playback.props = {
+                node.name      = "spatial_stereo_output"
+                node.passive   = true
+            }
+        }
+    }
+]
