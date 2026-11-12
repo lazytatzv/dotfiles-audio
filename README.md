@@ -6,7 +6,7 @@ Tuned specifically for headphone listening with tight bass, clear drums/synths, 
 
 ---
 
-## 🎧 Presets Overview
+## Presets Overview
 
 | Preset | Description | When to use |
 | :--- | :--- | :--- |
@@ -17,7 +17,7 @@ Tuned specifically for headphone listening with tight bass, clear drums/synths, 
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
 # Clone and install
@@ -30,7 +30,7 @@ The script symlinks the presets and `.irs` files directly into your EasyEffects 
 
 ---
 
-## 🕹️ Switch Presets via CLI
+## Switch Presets via CLI
 
 You can switch profiles on the fly directly from the terminal or keybind them in your window manager (Sway / Hyprland / i3):
 
@@ -50,7 +50,7 @@ easyeffects -l Spatial-GSX-Gaming
 
 ---
 
-## 🛠️ Notes
+## Notes
 
 - **Anti-Clipping**: All presets include a `-6.5 dB` preamp headroom to prevent digital distortion when boosting bass/treble. If the volume feels a bit quiet, turn up your system/amp master volume.
 - **Uninstall**: Run `./uninstall.sh` to cleanly remove all symlinks.
