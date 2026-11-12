@@ -7,10 +7,10 @@
     "convolver#0": {
       "autogain": true,
       "bypass": false,
-      "dry": 0.0,
+      "dry": -100.0,
       "input-gain": 0.0,
       "ir-width": 100.0,
-      "kernel-name": "dtshx",
+      "kernel-name": "dtshx-stereo",
       "output-gain": 0.0,
       "wet": 0.0
     }

@@ -7,10 +7,10 @@
     "convolver#0": {
       "autogain": true,
       "bypass": false,
-      "dry": 0.0,
+      "dry": -100.0,
       "input-gain": 0.0,
       "ir-width": 100.0,
-      "kernel-name": "atmos",
+      "kernel-name": "Dolby ATMOS ((128K MP3)) 1.Default",
       "output-gain": 0.0,
       "wet": 0.0
     }

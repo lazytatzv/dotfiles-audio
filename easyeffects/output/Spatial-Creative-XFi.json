@@ -1,0 +1,18 @@
+{
+  "output": {
+    "blocklist": [],
+    "plugins_order": [
+      "convolver#0"
+    ],
+    "convolver#0": {
+      "autogain": true,
+      "bypass": false,
+      "dry": -100.0,
+      "input-gain": 0.0,
+      "ir-width": 100.0,
+      "kernel-name": "Creative X-Fi ((Z-Edition)) Crystalizer 10 + Expand 10",
+      "output-gain": 0.0,
+      "wet": 0.0
+    }
+  }
+}

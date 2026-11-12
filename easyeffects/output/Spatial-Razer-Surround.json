@@ -1,0 +1,18 @@
+{
+  "output": {
+    "blocklist": [],
+    "plugins_order": [
+      "convolver#0"
+    ],
+    "convolver#0": {
+      "autogain": true,
+      "bypass": false,
+      "dry": -100.0,
+      "input-gain": 0.0,
+      "ir-width": 100.0,
+      "kernel-name": "Razor Surround ((48k Z-Edition)) 1.Stereo +0 Bass Low Latency",
+      "output-gain": 0.0,
+      "wet": 0.0
+    }
+  }
+}
