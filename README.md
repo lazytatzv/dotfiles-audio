@@ -18,6 +18,25 @@ Tuned specifically for headphone listening with tight bass, clear drums/synths, 
 
 ---
 
+## Prerequisites & Dependencies
+
+Make sure **PipeWire** and **EasyEffects** along with recommended LV2 DSP plugins (Equalizer, Stereo Tools, Convolver) are installed:
+
+### Arch Linux (`pacman`)
+
+```bash
+sudo pacman -S --needed pipewire pipewire-pulse easyeffects lsp-plugins-lv2 calf mda.lv2 zam-plugins-lv2
+```
+
+### Debian / Ubuntu (`apt`)
+
+```bash
+sudo apt update
+sudo apt install pipewire pipewire-pulse easyeffects lsp-plugins-lv2 calf-plugins mda-lv2 zam-plugins
+```
+
+---
+
 ## Quick Start
 
 ```bash
@@ -27,13 +46,29 @@ cd ~/dotfiles-audio
 ./install.sh
 ```
 
-The script symlinks the presets and `.irs` files directly into your EasyEffects configuration folders.
+The script symlinks the presets and `.irs` files directly into your EasyEffects configuration folders (`~/.local/share/easyeffects/output` and `~/.local/share/easyeffects/irs`).
 
 ---
 
-## Switch Presets via CLI
+## Running EasyEffects & Switching Presets
 
-You can switch profiles on the fly directly from the terminal or keybind them in your window manager (Sway / Hyprland / i3):
+### 1. Launch in Background (Recommended)
+
+In EasyEffects 8+ (especially on Wayland), always run EasyEffects in hidden background mode first:
+
+```bash
+easyeffects -w
+```
+
+If you want to open/expand the graphical interface (GUI), launch it while the service is running:
+
+```bash
+easyeffects &
+```
+
+### 2. Switch Presets via CLI
+
+Once the daemon is running, switch profiles on the fly directly from the terminal or keybind them in your window manager (Sway / Hyprland / i3):
 
 ```bash
 # Sony WH-CH720N calibrated profile
@@ -50,6 +85,31 @@ easyeffects -l Ultimate-Spatial-MaxxSpace
 
 # FPS footsteps
 easyeffects -l Spatial-GSX-Gaming
+```
+
+---
+
+## Troubleshooting
+
+### QML Error on Wayland (`TypeError: Cannot read property 'height' of null`)
+
+If you see an error like:
+```text
+qrc:/qt/qml/ee/ui/contents/ui/Main.qml:34: TypeError: Cannot read property 'height' of null
+```
+or if the CLI hangs / the window does not appear when running `easyeffects -l <Preset>`, this is a known upstream layout initialization issue on EasyEffects 8.3.2+ under Wayland compositors.
+
+**Fix:**
+Launch EasyEffects with the `-w` (hide window) flag in the background before applying presets or opening the window:
+```bash
+# 1. Start daemon in background
+easyeffects -w
+
+# 2. Load desired preset
+easyeffects -l Sony-WH-CH720N-Custom-Spatial
+
+# 3. (Optional) Open GUI window
+easyeffects &
 ```
 
 ---
